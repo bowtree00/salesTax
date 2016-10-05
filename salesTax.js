@@ -44,15 +44,12 @@ return salesTax
 }
 
 
-
 function salesTaxReport(companySalesData, salesTaxRates) {
 var taxReport = {};
 
   for (salesInstance of companySalesData) {
     if (!taxReport[salesInstance.name]) {  
       
-      var salesSum = 0;
-
       taxReport[salesInstance.name] = {
         totalSales: sumSales(salesInstance),
         totalTaxes: calculateSalesTax(salesInstance, salesTaxRates)
